@@ -3,8 +3,7 @@ import comtypes.client
 from pptx import Presentation
 import pandas as pd
 
-# Replace the file path with the path to your CSV file
-file_path = 'your_csv_file.csv'
+
 
 
 def replace_text_in_slide(slide, old_text, new_text):
@@ -102,16 +101,35 @@ while confirmed_directory.upper() == "N":
         confirmed_directory = 'Y'
     except Exception as e:
         print(f"Error changing directory: {e}")
+        
+# Get the current working directory
+current_directory = os.getcwd()
+        
+# List all files in the current directory
+all_files = os.listdir(current_directory)
 
-csv_file_path = os.path.join(os.getcwd(), file_path)
+# Filter and list only the CSV files
+csv_files = [file for file in all_files if file.endswith('.csv')]
+
+print("\nCSV files found in current directory:")
+
+# Print the list of CSV files
+for i in range(len(csv_files)):
+    print(f"{i}. {csv_files[i]}")
+    
+
+index = int(input("\nPlease enter the index for the CSV file:\neg. 0 (to choose Cloud_101_with_AWS.csv)\n-->"))
+csv_file_path = os.path.join(os.getcwd(), csv_files[index])
 
 # Check if the file exists
 if not os.path.exists(csv_file_path):
     print(f"File not found: {csv_file_path}")
     exit()
+    
+    
 
 # Reads the CSV file and converts the names column to a list
-data = pd.read_csv(file_path)
+data = pd.read_csv(csv_files[index])
 temp_names = data['Name'].tolist()
 names = [name.strip() for name in temp_names]
 
