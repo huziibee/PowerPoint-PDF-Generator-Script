@@ -4,8 +4,11 @@
 
 This Python script automates the process of creating personalized PowerPoint presentations and converting them into PDFs. It reads a list of names from a specified CSV file, uses these names to replace placeholders in PowerPoint templates, and then generates a PDF for each customized presentation.
 
-## Video Walk-through 
+## Video Setup
+
 [![YouTube Tutorial](https://img.youtube.com/vi/QUoLlPZyYoQ/maxresdefault.jpg)](https://youtu.be/QUoLlPZyYoQ?si=jkJZtFGAb3uyzmLZ)
+
+
 
 ## Requirements
 
