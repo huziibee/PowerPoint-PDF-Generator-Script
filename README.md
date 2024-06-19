@@ -17,6 +17,7 @@ This Python script automates the creation of personalized PowerPoint presentatio
 - Python with the following packages:
   - `os` (standard library)
   - `comtypes`
+  - `colorama`
   - `python-pptx`
   - `pandas`
 
@@ -25,7 +26,7 @@ This Python script automates the creation of personalized PowerPoint presentatio
 To install the necessary Python packages, use pip:
 
 ```bash
-pip install python-pptx pandas
+pip install python-pptx pandas colorama
 ```
 
 **Note**: The `comtypes` package may require installation with administrative privileges. To install `comtypes`, run:
@@ -42,15 +43,16 @@ pip install comtypes --user
 
 ## Usage
 
-1. **Ensure Required Files**: Place the `short name.pptx` and `long name.pptx` templates in the same directory as the script.
-2. **Run the Script**: Execute `python converter.py` in your command line.
-3. **Confirm or Change Directory**: When prompted, confirm the current directory or enter a new one.
+1. **Ensure Required Files**: Place the `required.pptx` template and `required.csv` are in the same directory as the script.
+2. **Setup Environment**: Ensure you are running this script on a windows machine with PowerPoint installed. Install all other dependancies.
+3. **Run the Script**: Execute `python converter.py` in your command line.
 4. **Select a CSV File**: Choose a CSV file from the listed options in the current directory.
-5. **Check Output**: The script generates PDFs in an `output_pdfs` folder within the same directory.
+5. **Select a PPTX File**: Choose a PPTX file from the listed options in the current directory.
+6. **Check Output**: The script generates PDFs in an `output_pdfs` folder within the same directory.
 
 ## Script Workflow
 
-- **Directory Confirmation**: The script first confirms the current working directory or changes it based on user input.
 - **CSV File Selection**: Lists all CSV files in the current directory for the user to select.
-- **Name Processing**: Reads names
+- **PPTX File Selection**: Lists all PPTX files in the current directory for the user to select.
+- **Name Processing**: Reads names and converts to PDF
 

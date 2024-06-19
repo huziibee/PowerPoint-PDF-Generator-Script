@@ -1,0 +1,15 @@
+*.csv
+*.zip
+*.xls
+*.png
+*pdf
+*.docx
+*.xlsx
+*.jpg
+*.jpeg
+*.ppt
+*.doc
+*.txt
+*.pptx
+
+scrape.py
